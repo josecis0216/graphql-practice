@@ -16,4 +16,5 @@ model Course {
   defaultCredits String
   courseCode     String
   termsOffered   String
+  createdBy      String
 }

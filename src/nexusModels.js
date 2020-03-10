@@ -11,6 +11,7 @@ const Course = objectType({
     t.model.defaultCredits()
     t.model.courseCode()
     t.model.termsOffered()
+    t.model.createdBy()
   }
 })
 
