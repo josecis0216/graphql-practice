@@ -13,7 +13,16 @@ type Course {
   updatedAt: DateTime!
 }
 
+input CourseWhereUniqueInput {
+  id: String
+}
+
 scalar DateTime
+
+type Mutation {
+  createCourse(courseCode: String!, defaultCredits: String, description: String, name: String!, termsOffered: String): Course!
+  deleteOneCourse(where: CourseWhereUniqueInput!): Course
+}
 
 type Query {
   Course(id: ID): Course
