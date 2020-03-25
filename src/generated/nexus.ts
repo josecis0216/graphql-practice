@@ -57,6 +57,7 @@ export interface NexusGenFieldTypes {
   Mutation: { // field return type
     createCourse: NexusGenRootTypes['Course']; // Course!
     deleteOneCourse: NexusGenRootTypes['Course'] | null; // Course
+    updateCourse: NexusGenRootTypes['Course']; // Course!
   }
   Query: { // field return type
     Course: NexusGenRootTypes['Course'] | null; // Course
@@ -75,6 +76,14 @@ export interface NexusGenArgTypes {
     }
     deleteOneCourse: { // args
       where: NexusGenInputs['CourseWhereUniqueInput']; // CourseWhereUniqueInput!
+    }
+    updateCourse: { // args
+      courseCode?: string | null; // String
+      defaultCredits?: string | null; // String
+      description?: string | null; // String
+      id?: string | null; // ID
+      name?: string | null; // String
+      termsOffered?: string | null; // String
     }
   }
   Query: {

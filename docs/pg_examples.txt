@@ -1,0 +1,48 @@
+query allCourses {
+  Courses {
+    name
+    description
+    defaultCredits
+    courseCode
+    termsOffered
+  }
+}
+
+query oneCourse {
+  Course(id: "ck86tftgr00013wax2rm65jkk") {
+    name
+  }
+}
+
+mutation createCourse {
+  createCourse (
+    name: "MyCourse",
+    description: "My description",
+    defaultCredits: "3",
+    courseCode: "DGM 9000",
+    termsOffered: "Fall, Spring"
+  ) {
+    id
+  }
+}
+
+mutation deleteOneCourse {
+  deleteOneCourse(where: {
+    id: "ck86tftgf00003wax1f3e4l5q"
+  }) {
+    name
+  }
+}
+
+mutation updateCourse {
+  updateCourse (
+    id: "ck86tftgr00013wax2rm65jkk",
+    name: "MyCourse",
+    description: "My description",
+    defaultCredits: "3",
+    courseCode: "DGM 9000",
+    termsOffered: "Fall, Spring"
+  ) {
+    id
+  }
+}

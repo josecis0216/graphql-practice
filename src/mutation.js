@@ -16,7 +16,7 @@ export const Mutation = mutationType({
         courseCode: stringArg( { nullable: false }),
         termsOffered: stringArg(),
       },
-      resolve: (_, { name, description, defaultCredits, courseCode, termsOffered }, ctx) => {
+      resolve: (parent, { name, description, defaultCredits, courseCode, termsOffered }, ctx) => {
         return ctx.prisma.course.create({
           data: {
             name,
@@ -27,6 +27,31 @@ export const Mutation = mutationType({
           },
         })
       },
+    })
+
+    t.field('updateCourse', {
+      type: 'Course',
+      args: { id: idArg(), 
+        name: stringArg(), 
+        description: stringArg(), 
+        defaultCredits: stringArg(), 
+        courseCode: stringArg(), 
+        termsOffered: stringArg(),
+        },
+      resolve: (parent, { id, name, description, defaultCredits, courseCode, termsOffered }, ctx) => {
+        return ctx.prisma.course.update({
+          where: {
+            id,
+          },
+          data: {
+            name, 
+            description, 
+            defaultCredits, 
+            courseCode, 
+            termsOffered
+          }
+        })
+      }
     })
   }
 })

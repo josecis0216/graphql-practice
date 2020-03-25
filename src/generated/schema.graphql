@@ -22,6 +22,7 @@ scalar DateTime
 type Mutation {
   createCourse(courseCode: String!, defaultCredits: String, description: String, name: String!, termsOffered: String): Course!
   deleteOneCourse(where: CourseWhereUniqueInput!): Course
+  updateCourse(courseCode: String, defaultCredits: String, description: String, id: ID, name: String, termsOffered: String): Course!
 }
 
 type Query {
