@@ -1,6 +1,7 @@
 import { idArg, queryType, stringArg } from 'nexus'
 
 export const Query = queryType({
+  name: "Query",
   definition(t) {
     t.field('Course', {
       type: 'Course',
