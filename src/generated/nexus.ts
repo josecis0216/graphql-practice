@@ -79,7 +79,6 @@ export interface NexusGenArgTypes {
     }
     updateCourse: { // args
       courseCode?: string | null; // String
-      defaultCredits?: string | null; // String
       description?: string | null; // String
       id?: string | null; // ID
       name?: string | null; // String
