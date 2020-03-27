@@ -17,3 +17,15 @@ model Course {
   courseCode     String
   termsOffered   String
 }
+
+model Player {
+  id          String   @default(cuid()) @id
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  name        String
+  first   String
+  position    String
+  dob         String
+  nationality String
+  jerseyNumber String
+}

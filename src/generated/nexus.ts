@@ -30,6 +30,7 @@ export interface NexusGenEnums {
 export interface NexusGenRootTypes {
   Course: prisma.Course;
   Mutation: {};
+  Player: prisma.Player;
   Query: {};
   String: string;
   Int: number;
@@ -59,9 +60,20 @@ export interface NexusGenFieldTypes {
     deleteOneCourse: NexusGenRootTypes['Course'] | null; // Course
     updateCourse: NexusGenRootTypes['Course']; // Course!
   }
+  Player: { // field return type
+    createdAt: any; // DateTime!
+    dob: string; // String!
+    first: string; // String!
+    id: string; // String!
+    jerseyNumber: string; // String!
+    name: string; // String!
+    nationality: string; // String!
+    position: string; // String!
+    updatedAt: any; // DateTime!
+  }
   Query: { // field return type
-    Course: NexusGenRootTypes['Course'] | null; // Course
-    Courses: NexusGenRootTypes['Course'][]; // [Course!]!
+    Player: NexusGenRootTypes['Player'] | null; // Player
+    Players: NexusGenRootTypes['Player'][]; // [Player!]!
   }
 }
 
@@ -86,10 +98,10 @@ export interface NexusGenArgTypes {
     }
   }
   Query: {
-    Course: { // args
+    Player: { // args
       id?: string | null; // ID
     }
-    Courses: { // args
+    Players: { // args
       searchString?: string | null; // String
     }
   }
@@ -100,7 +112,7 @@ export interface NexusGenAbstractResolveReturnTypes {
 
 export interface NexusGenInheritedFields {}
 
-export type NexusGenObjectNames = "Course" | "Mutation" | "Query";
+export type NexusGenObjectNames = "Course" | "Mutation" | "Player" | "Query";
 
 export type NexusGenInputNames = "CourseWhereUniqueInput";
 

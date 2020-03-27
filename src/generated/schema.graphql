@@ -25,7 +25,19 @@ type Mutation {
   updateCourse(courseCode: String, description: String, id: ID, name: String, termsOffered: String): Course!
 }
 
+type Player {
+  createdAt: DateTime!
+  dob: String!
+  first: String!
+  id: String!
+  jerseyNumber: String!
+  name: String!
+  nationality: String!
+  position: String!
+  updatedAt: DateTime!
+}
+
 type Query {
-  Course(id: ID): Course
-  Courses(searchString: String): [Course!]!
+  Player(id: ID): Player
+  Players(searchString: String): [Player!]!
 }
