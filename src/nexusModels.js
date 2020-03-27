@@ -25,6 +25,7 @@ const Player = objectType({
     t.model.position()
     t.model.dob()
     t.model.nationality()
+    t.model.currentTeam()
     t.model.jerseyNumber()
   }
 })

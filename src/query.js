@@ -61,8 +61,7 @@ export const Query = queryType({
         return ctx.prisma.player.findMany({
           where: {
             OR: [
-              { name: { contains: searchString }},
-              { description: { contains: searchString }}
+              { name: { contains: searchString }}
             ],
           },
         })

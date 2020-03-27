@@ -19,13 +19,13 @@ model Course {
 }
 
 model Player {
-  id          String   @default(cuid()) @id
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
-  name        String
-  first   String
-  position    String
-  dob         String
-  nationality String
+  id           String   @default(cuid()) @id
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+  name         String
+  position     String
+  dob          String
+  nationality  String
+  currentTeam  String
   jerseyNumber String
 }

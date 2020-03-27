@@ -262,13 +262,6 @@
     {
       "tag": "CreateField",
       "model": "Player",
-      "field": "first",
-      "type": "String",
-      "arity": "Required"
-    },
-    {
-      "tag": "CreateField",
-      "model": "Player",
       "field": "position",
       "type": "String",
       "arity": "Required"
@@ -284,6 +277,13 @@
       "tag": "CreateField",
       "model": "Player",
       "field": "nationality",
+      "type": "String",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateField",
+      "model": "Player",
+      "field": "currentTeam",
       "type": "String",
       "arity": "Required"
     },

@@ -1,6 +1,6 @@
-# Migration `20200327103550-init`
+# Migration `20200327120322-init`
 
-This migration has been generated at 3/27/2020, 10:35:50 AM.
+This migration has been generated at 3/27/2020, 12:03:22 PM.
 You can check out the [state of the schema](./schema.prisma) after the migration.
 
 ## Database Steps
@@ -20,8 +20,8 @@ CREATE TABLE "public"."Course" (
 
 CREATE TABLE "public"."Player" (
     "createdAt" timestamp(3)  NOT NULL DEFAULT '1970-01-01 00:00:00',
+    "currentTeam" text  NOT NULL DEFAULT '',
     "dob" text  NOT NULL DEFAULT '',
-    "first" text  NOT NULL DEFAULT '',
     "id" text  NOT NULL ,
     "jerseyNumber" text  NOT NULL DEFAULT '',
     "name" text  NOT NULL DEFAULT '',
@@ -36,7 +36,7 @@ CREATE TABLE "public"."Player" (
 
 ```diff
 diff --git schema.prisma schema.prisma
-migration ..20200327103550-init
+migration ..20200327120322-init
 --- datamodel.dml
 +++ datamodel.dml
 @@ -1,0 +1,31 @@
@@ -61,14 +61,14 @@ migration ..20200327103550-init
 +}
 +
 +model Player {
-+  id          String   @default(cuid()) @id
-+  createdAt   DateTime @default(now())
-+  updatedAt   DateTime @updatedAt
-+  name        String
-+  first   String
-+  position    String
-+  dob         String
-+  nationality String
++  id           String   @default(cuid()) @id
++  createdAt    DateTime @default(now())
++  updatedAt    DateTime @updatedAt
++  name         String
++  position     String
++  dob          String
++  nationality  String
++  currentTeam  String
 +  jerseyNumber String
 +}
 ```

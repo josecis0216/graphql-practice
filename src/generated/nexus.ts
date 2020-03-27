@@ -19,7 +19,7 @@ declare global {
 }
 
 export interface NexusGenInputs {
-  CourseWhereUniqueInput: { // input type
+  PlayerWhereUniqueInput: { // input type
     id?: string | null; // String
   }
 }
@@ -41,7 +41,7 @@ export interface NexusGenRootTypes {
 }
 
 export interface NexusGenAllTypes extends NexusGenRootTypes {
-  CourseWhereUniqueInput: NexusGenInputs['CourseWhereUniqueInput'];
+  PlayerWhereUniqueInput: NexusGenInputs['PlayerWhereUniqueInput'];
 }
 
 export interface NexusGenFieldTypes {
@@ -56,14 +56,14 @@ export interface NexusGenFieldTypes {
     updatedAt: any; // DateTime!
   }
   Mutation: { // field return type
-    createCourse: NexusGenRootTypes['Course']; // Course!
-    deleteOneCourse: NexusGenRootTypes['Course'] | null; // Course
-    updateCourse: NexusGenRootTypes['Course']; // Course!
+    createPlayer: NexusGenRootTypes['Player']; // Player!
+    deleteOnePlayer: NexusGenRootTypes['Player'] | null; // Player
+    updatePlayer: NexusGenRootTypes['Player']; // Player!
   }
   Player: { // field return type
     createdAt: any; // DateTime!
+    currentTeam: string; // String!
     dob: string; // String!
-    first: string; // String!
     id: string; // String!
     jerseyNumber: string; // String!
     name: string; // String!
@@ -79,22 +79,23 @@ export interface NexusGenFieldTypes {
 
 export interface NexusGenArgTypes {
   Mutation: {
-    createCourse: { // args
-      courseCode: string; // String!
-      defaultCredits?: string | null; // String
-      description?: string | null; // String
+    createPlayer: { // args
+      currentTeam?: string | null; // String
+      dob?: string | null; // String
+      jerseyNumber?: string | null; // String
       name: string; // String!
-      termsOffered?: string | null; // String
+      nationality?: string | null; // String
+      position: string; // String!
     }
-    deleteOneCourse: { // args
-      where: NexusGenInputs['CourseWhereUniqueInput']; // CourseWhereUniqueInput!
+    deleteOnePlayer: { // args
+      where: NexusGenInputs['PlayerWhereUniqueInput']; // PlayerWhereUniqueInput!
     }
-    updateCourse: { // args
-      courseCode?: string | null; // String
-      description?: string | null; // String
+    updatePlayer: { // args
+      currentTeam?: string | null; // String
       id?: string | null; // ID
+      jerseyNumber?: string | null; // String
       name?: string | null; // String
-      termsOffered?: string | null; // String
+      position?: string | null; // String
     }
   }
   Query: {
@@ -114,7 +115,7 @@ export interface NexusGenInheritedFields {}
 
 export type NexusGenObjectNames = "Course" | "Mutation" | "Player" | "Query";
 
-export type NexusGenInputNames = "CourseWhereUniqueInput";
+export type NexusGenInputNames = "PlayerWhereUniqueInput";
 
 export type NexusGenEnumNames = never;
 

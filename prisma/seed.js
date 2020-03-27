@@ -13,10 +13,10 @@ function loadPlayers() {
     return {
       data: {
         name: plr.name._text,
-        first: plr.firstName._text,
         position: plr.position._text,
         dob: plr.dateOfBirth._text,
         nationality: plr.nationality._text,
+        currentTeam: plr.currentTeam._text,
         jerseyNumber: plr.shirtNumber._text
       },
     }

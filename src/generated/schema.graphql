@@ -13,28 +13,28 @@ type Course {
   updatedAt: DateTime!
 }
 
-input CourseWhereUniqueInput {
-  id: String
-}
-
 scalar DateTime
 
 type Mutation {
-  createCourse(courseCode: String!, defaultCredits: String, description: String, name: String!, termsOffered: String): Course!
-  deleteOneCourse(where: CourseWhereUniqueInput!): Course
-  updateCourse(courseCode: String, description: String, id: ID, name: String, termsOffered: String): Course!
+  createPlayer(currentTeam: String, dob: String, jerseyNumber: String, name: String!, nationality: String, position: String!): Player!
+  deleteOnePlayer(where: PlayerWhereUniqueInput!): Player
+  updatePlayer(currentTeam: String, id: ID, jerseyNumber: String, name: String, position: String): Player!
 }
 
 type Player {
   createdAt: DateTime!
+  currentTeam: String!
   dob: String!
-  first: String!
   id: String!
   jerseyNumber: String!
   name: String!
   nationality: String!
   position: String!
   updatedAt: DateTime!
+}
+
+input PlayerWhereUniqueInput {
+  id: String
 }
 
 type Query {
